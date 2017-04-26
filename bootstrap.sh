@@ -5,6 +5,7 @@ set +o histexpand
 # BOOTSTRAP_URL="$(hostname -I)"
 BOOTSTRAP_URL=$1
 DCOS_DOWNLOAD_URL=$2
+DCOS_PASSWORD_HASH='$6$rounds=656000$83725EIL6U0tE/PU$1cJ9wGZ47q2QTQEZbMWK.uuXyB5CUirWRfBlQTDMnFsvH5l5sI50tdlH7TKYTzaPdVbsxix9NWrim1.y3Cfwf/' # Passw0rd
 
 cd /var/tmp
 
@@ -25,7 +26,7 @@ resolvers:
 oauth_enabled: 'false'
 telemetry_enabled: 'false'
 superuser_username: 'admin'
-superuser_password_hash: '$6$rounds=656000$83725EIL6U0tE/PU$1cJ9wGZ47q2QTQEZbMWK.uuXyB5CUirWRfBlQTDMnFsvH5l5sI50tdlH7TKYTzaPdVbsxix9NWrim1.y3Cfwf/' # Passw0rd
+superuser_password_hash: '${DCOS_PASSWORD_HASH}'
 EOF
 
 cat <<'EOF' > "/var/tmp/genconf/ip-detect"
