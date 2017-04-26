@@ -3,5 +3,5 @@ ROLE=$2
 
 mkdir /tmp/dcos
 cd /tmp/dcos
-curl -O http://${bootstrap_url}/dcos_install.sh
-sudo bash dcos_install.sh ${role}
+curl -O http://${BOOTSTRAP_URL}/dcos_install.sh
+sudo bash dcos_install.sh ${ROLE}
