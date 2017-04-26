@@ -10,7 +10,7 @@ cd /var/tmp
 
 mkdir -p /var/tmp/genconf
 
-cat <<'EOF' > "/var/tmp/genconf/config.yaml"
+cat <<EOF > "/var/tmp/genconf/config.yaml"
 ---
 bootstrap_url: http://${BOOTSTRAP_URL}:80
 cluster_name: 'dcos'
